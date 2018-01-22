@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+  <channel>
+    <generator>RSS Builder by B!Soft</generator>
+    <title>Aerodesign</title>
+    <link>http://homepage.usask.ca/~caw724/rss.xml</link>
+    <description>Team Updates</description>
+    <language>af</language>
+    <item>
+      <title>Meeting</title>
+      <pubDate>Tue, 14 Jul 2015 10:31:19 -0600</pubDate>
+      <description><![CDATA[Meeting today]]></description>
+    </item>
+  </channel>
+</rss>
