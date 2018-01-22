@@ -48,15 +48,29 @@ public class server{
                     );
                 ps = new PrintStream(s.getOutputStream() );
             
+                
                 //TODO initiate redirection
                
+                //TODO change if file not found
                 ps.print("HTTP/1.0 200 OK\r\n");
                 ps.print("Content-Type:text/html\r\n");
                 ps.print("/r/n/r/n");
 
                 //Initiate File connection
-                //Seperate Function
-                readFile(directory);
+                File fileParser = new File(directory);
+                File fileReader;
+                fileParser.setReadOnly();
+                if(fileParser.isDirectory()){
+                    File[] files = fileParser.listFiles();
+                    fileReader = files[0];
+                }
+                else{
+                    fileReader = fileParser;
+                }
+                
+                FileInputStream fis = new FileInputStream(fileReader);
+                
+                ps.print(fis);
     
                //Close Server
                 s.close();
@@ -66,23 +80,10 @@ public class server{
         catch(Exception E){
             System.out.println(E);
         }
+        
 
     }//end serve
 
-    public static void readFile(String directory){
-
-    try{
-        //TODO open
-        FileInputStream file = new FileInputStream(directory);
-
-
-    }
-    catch(FileNotFoundException fe){
-        //TODO proper message
-        System.out.println(fe);
-    }
-
-    }//end file read
 
 
 
